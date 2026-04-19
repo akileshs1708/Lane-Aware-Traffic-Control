@@ -90,20 +90,13 @@ streamlit run dashboard.py
 
 ### Scenario 1 — Warehouse Layout
 
-A 10×10 grid of 100 nodes connected by 180 bidirectional lanes. Lane types are assigned by grid position:
-
-| Grid position | Lane type | Safety | Capacity | Reservation |
-|---|---|---|---|---|
-| Rows 2, 5, 7 | Intersection | MEDIUM | 1 | Required |
-| Row 4 | Human Zone | LOW | 1 | Required |
-| Columns 0, 8 | Narrow | MEDIUM | 1 | Not required |
-| All others | Normal | HIGH | 2 | Not required |
+A 10×10 grid of 100 nodes connected by 180 bidirectional lanes.
 
 Eight robots navigate from corner to corner and across the grid. Expected result: all 8 complete in 19 steps with zero delay and zero deadlocks.
 
 ### Scenario 2 — Circular Deadlock
 
-Eight nodes arranged in a circle with directed narrow lanes running clockwise. Each robot starts at node `i` and targets node `(i + 4) % 8` — the node directly opposite. Every robot immediately claims its first lane, then blocks its neighbour, forming a perfect 8-robot wait cycle at timestep 3.
+Eight nodes arranged in a circle with directed narrow lanes running clockwise. Every robot immediately claims its first lane, then blocks its neighbour, forming a perfect 8-robot wait cycle at timestep 3.
 
 The deadlock detector identifies the cycle, selects the robot with the shortest remaining path as the victim, releases its reservations, and replans it with congestion avoidance. All 8 robots complete in 24 steps with a total delay of 12.3 seconds.
 
@@ -189,7 +182,7 @@ The Streamlit dashboard (`dashboard.py`) provides four pages:
 
 **Warehouse Scenario** — four tabs:
 - Network: interactive lane graph colour-coded by type, with edge width proportional to usage
-- Robot Trajectories: combined path overlay, animated step-by-step playback, per-robot path chart with Plasma colour scale showing time progression, step-by-step position table, and X/Y vs. time chart
+- Robot Trajectories: combined path overlay, animated step-by-step playback, per-robot path chart showing time progression, step-by-step position table
 - Lane Heatmap: red-intensity overlay showing which lanes were most congested, with a top-15 usage table
 - Timeline: area charts for robots completed, robots waiting, and cumulative delay
 
