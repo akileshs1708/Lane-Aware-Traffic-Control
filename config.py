@@ -1,0 +1,41 @@
+"""
+Configuration constants
+"""
+
+# Simulation parameters
+DEFAULT_NUM_ROBOTS = 8
+DEFAULT_NUM_STEPS = 500
+UPDATE_INTERVAL = 0.1
+
+# Pathfinding parameters
+REPLAN_WAIT_THRESHOLD = 30  # Steps to wait before replanning
+CONGESTION_HISTORY_SIZE = 100
+
+# Visualization parameters
+FIGURE_SIZE_LARGE = (12, 10)
+FIGURE_SIZE_MEDIUM = (10, 8)
+NODE_SIZE = 8
+ROBOT_SIZE = 150
+ROBOT_SIZE_COMPLETED = 200
+
+# Grid parameters (for warehouse scenario)
+GRID_SIZE = 10
+GRID_SPACING = 2.0
+
+# Circular scenario parameters
+CIRCULAR_NODES = 8
+CIRCULAR_RADIUS = 5.0
+
+# Deadlock detection
+DEADLOCK_CHECK_ENABLED = True
+
+# Congestion scoring
+CONGESTION_OCCUPANCY_WEIGHT = 30
+CONGESTION_FREQUENCY_WEIGHT = 2
+MAX_CONGESTION_SCORE = 100.0
+
+# Cost multipliers
+SAFETY_LOW_MULTIPLIER = 1.5
+LANE_NARROW_MULTIPLIER = 1.3
+LANE_INTERSECTION_MULTIPLIER = 1.2
+LANE_HUMAN_ZONE_MULTIPLIER = 2.0
