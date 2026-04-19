@@ -4,9 +4,7 @@ A simulation framework for coordinating multiple autonomous robots navigating a 
 
 ## Overview
 
-This system simulates autonomous mobile robots (AMRs) sharing a typed lane network — the kind of environment found in warehouses, factory floors, or logistics hubs. Each lane carries metadata describing its type, safety level, speed limit, and capacity. Robots plan optimal routes, coordinate access to contested lanes, and recover automatically when they deadlock.
-
-The two built-in scenarios test opposite ends of the complexity spectrum: a well-designed warehouse grid where robots complete without any delay, and a deliberately adversarial circular layout that guarantees a deadlock at step 3 and forces the resolution system to intervene.
+This system simulates autonomous robots sharing a typed lane network — the kind of environment found in warehouses, factory floors, or logistics hubs. Each lane carries metadata describing its type, safety level, speed limit, and capacity. Robots plan optimal routes, coordinate access to contested lanes, and recover automatically when they deadlock.
 
 ---
 
@@ -39,7 +37,6 @@ laneawaretrafficcontrol/
 ├── visualizer.py                   # Matplotlib visualisations (state, heatmap, trajectories)
 ├── config.py                       # All tunable constants
 ├── main.py                         # Entry point — runs both scenarios
-├── __init__.py                     # Package exports
 │
 ├── metrics_warehouse_layout.json   # Saved results from the warehouse scenario
 ├── metrics_circular_deadlock.json  # Saved results from the deadlock scenario
