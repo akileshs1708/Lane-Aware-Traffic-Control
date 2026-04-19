@@ -2,6 +2,8 @@
 
 A simulation framework for coordinating multiple autonomous robots navigating a shared lane network. The system handles path planning, collision avoidance, lane reservation, congestion tracking, and automatic deadlock detection and resolution.
 
+View results dashboard using this link: https://lane-aware-traffic-control.streamlit.app/
+
 ## Overview
 
 This system simulates autonomous robots sharing a typed lane network — the kind of environment found in warehouses, factory floors, or logistics hubs. Each lane carries metadata describing its type, safety level, speed limit, and capacity. Robots plan optimal routes, coordinate access to contested lanes, and recover automatically when they deadlock.
