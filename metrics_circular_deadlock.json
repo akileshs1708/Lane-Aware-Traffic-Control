@@ -1,0 +1,37 @@
+{
+  "scenario": "Circular Deadlock",
+  "total_steps": 24,
+  "completed": 8,
+  "total_robots": 8,
+  "total_delay": 12.299999999999972,
+  "deadlocks_resolved": 1,
+  "replans": 0,
+  "collisions_avoided": 0,
+  "average_delay": 1.5374999999999965,
+  "hotspots": 8,
+  "deadlock_events": [
+    {
+      "timestep": 3,
+      "cycle": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "robot_states": {
+        "0": 1,
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 5,
+        "5": 6,
+        "6": 7,
+        "7": 0
+      }
+    }
+  ]
+}

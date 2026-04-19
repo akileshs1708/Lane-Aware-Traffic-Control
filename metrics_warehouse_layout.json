@@ -1,0 +1,13 @@
+{
+  "scenario": "Warehouse Layout",
+  "total_steps": 19,
+  "completed": 8,
+  "total_robots": 8,
+  "total_delay": 0.0,
+  "deadlocks_resolved": 0,
+  "replans": 0,
+  "collisions_avoided": 0,
+  "average_delay": 0.0,
+  "hotspots": 0,
+  "deadlock_events": []
+}
