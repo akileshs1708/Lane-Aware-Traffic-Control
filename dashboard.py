@@ -92,7 +92,7 @@ def build_warehouse_graph():
 
 @st.cache_data
 def simulate_warehouse():
-    sys.path.insert(0, "/home/claude/laneawaretrafficcontrol")
+    sys.path.insert(0, "./laneawaretrafficcontrol")
     from scenario_builder import create_warehouse_scenario
     from traffic_controller import TrafficController
     graph = create_warehouse_scenario()
@@ -114,7 +114,7 @@ def simulate_warehouse():
 
 @st.cache_data
 def simulate_deadlock():
-    sys.path.insert(0, "/home/claude/laneawaretrafficcontrol")
+    sys.path.insert(0, "./laneawaretrafficcontrol")
     from scenario_builder import create_deadlock_scenario
     from traffic_controller import TrafficController
     graph = create_deadlock_scenario()
@@ -329,8 +329,8 @@ if page == "Overview":
 
     st.markdown("---")
     st.markdown('<div class="section-header">Scenario Comparison</div>', unsafe_allow_html=True)
-    keys   = ["total_steps","total_delay","deadlocks_resolved","replans","collisions_avoided","hotspots"]
-    labels = ["Total Steps","Total Delay (s)","Deadlocks Resolved","Path Replans","Collisions Avoided","Hotspots"]
+    keys   = ["total_steps","total_delay","deadlocks_resolved","hotspots"]
+    labels = ["Total Steps","Total Delay (s)","Deadlocks Resolved","Hotspots"]
     fig = go.Figure(data=[
         go.Bar(name="Warehouse",       x=labels, y=[wh[k] for k in keys], marker_color="#3b82f6"),
         go.Bar(name="Circular Deadlock",x=labels, y=[dl[k] for k in keys], marker_color="#f59e0b"),
